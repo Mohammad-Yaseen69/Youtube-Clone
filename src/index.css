@@ -45,6 +45,42 @@ a {
   width:350px;
 }
 
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display:grid;
+  -webkit-mask: conic-gradient(from 15deg,#0000,#000);
+  animation: l26 1s infinite steps(12);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.loader,
+.loader:before,
+.loader:after{
+  background:
+    radial-gradient(closest-side at 50% 12.5%,
+     #f03355 96%,#0000) 50% 0/20% 80% repeat-y,
+    radial-gradient(closest-side at 12.5% 50%,
+     #f03355 96%,#0000) 0 50%/80% 20% repeat-x;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  transform: rotate(30deg);
+}
+.loader:after {
+  transform: rotate(60deg);
+}
+
+@keyframes l26 {
+  100% {transform:rotate(1turn)}
+}
+@keyframes l16 { 
+  100%{transform: rotate(1turn)}
+}
+
 .category-btn{
   font-weight: bold !important;
   text-transform: capitalize;
@@ -57,6 +93,8 @@ a {
   border: none;
   gap: 5px;
   padding: 7px 15px;
+  padding-right: 40px;
+  white-space: nowrap;
   margin: 10px 0px;
   border-radius: 20px;
   transition: all 0.3s ease;

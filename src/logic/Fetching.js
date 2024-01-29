@@ -4,9 +4,6 @@ const Base_Url = 'https://youtube-v31.p.rapidapi.com'
 
 const options = {
     params: {
-        relatedToVideoId: '7ghhRHRP6t4',
-        part: 'id,snippet',
-        type: 'video',
         maxResults: '50'
     },
     headers: {
