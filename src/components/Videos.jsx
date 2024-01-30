@@ -4,7 +4,7 @@ import { VideoCard, ChannelCard } from './';
 
 const Videos = ({ Videos, loading }) => {
 
-    console.log(Videos);
+   
     return (
         <Stack
             direction='row'
@@ -21,7 +21,7 @@ const Videos = ({ Videos, loading }) => {
                 Videos.map((video, index) => (
                     <Box key={index}>
                         {video.id.videoId && <VideoCard video={video} />}
-                        {video.id.channelId && <ChannelCard channelDetail={video} />}
+                        {video.id.channelId && <ChannelCard channelDetail={video} navigated={true}/>}
                     </Box>
                 ))
             )}

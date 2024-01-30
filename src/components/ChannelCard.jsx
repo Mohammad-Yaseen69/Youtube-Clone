@@ -1,11 +1,12 @@
 import { CheckCircle } from '@mui/icons-material'
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { demoProfilePicture } from '../assets'
 
 
-const ChannelCard = ({ channelDetail }) => {
+const ChannelCard = ({ channelDetail, navigated }) => {
+  const navigate = useNavigate()
   return (
     <Box
       sx={{
@@ -16,10 +17,15 @@ const ChannelCard = ({ channelDetail }) => {
         maxWidth: { xs: '100%', sm: '358px', md: "290px" },
         minWidth: { xs: '100%', sm: '358px', md: "100%" },
         height: '326px',
-        mx : 4
+        mx: 4
       }}
     >
-      <Link to={`/channel/${channelDetail?.id?.channelId}`}>
+
+      <div onClick={() => {
+        if (navigated) {
+          navigate(`/channel/${channelDetail?.id?.channelId}`)
+        }
+      }} style={{cursor : navigated ? 'pointer' : 'auto'}}>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', color: '#fff' }}>
           <CardMedia
             image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
@@ -36,7 +42,8 @@ const ChannelCard = ({ channelDetail }) => {
             </Typography>
           )}
         </CardContent>
-      </Link>
+      </div>
+
     </Box>
   )
 }

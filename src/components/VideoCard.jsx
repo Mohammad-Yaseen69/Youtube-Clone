@@ -9,7 +9,7 @@ const VideoCard = ({ video: {
   id: { videoId },
   snippet
 } }) => {
-  console.log(videoId, snippet);
+  
 
   return (
     <Card sx={{
