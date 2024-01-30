@@ -9,12 +9,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Box sx={{ backgroundColor: "#000" , color : "white"}}>
+    <Box sx={{ backgroundColor: "#000", color: "white" ,overflowX : "hidden"}}>
       <Navbar />
 
       <Outlet />
-
-      Footer
     </Box>
   )
 }
