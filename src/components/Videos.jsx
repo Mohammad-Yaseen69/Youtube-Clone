@@ -7,7 +7,15 @@ const Videos = ({ Videos, loading }) => {
     console.log(Videos);
     return (
         <Stack
-            direction='row'  flexWrap='wrap' mt={3} gap={2} justifyContent={'center'}
+            direction='row'
+            flexWrap='wrap'
+            mt={3} gap={2}
+            sx={{
+                justifyContent: 'start',
+                '@media (max-width: 810px)': {
+                    justifyContent: 'center',
+                },
+            }}
         >
             {loading ? <div className='loader'></div> : (
                 Videos.map((video, index) => (
