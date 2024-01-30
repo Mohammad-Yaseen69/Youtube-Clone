@@ -1,10 +1,10 @@
-import ChannelDetail from "./ChannelDetail";
-import Feed from "./Feed";
-import Navbar from "./Navbar";
-import SearchBox from "./SearchBox";
-import SearchFeed from "./SearchFeed";
-import VideoDetail from "./VideoDetail";
-
-
-
-export {Navbar , SearchFeed ,Feed ,VideoDetail ,ChannelDetail ,SearchBox}
+export { default as ChannelDetail } from "./ChannelDetail";
+export { default as Feed } from "./Feed";
+export { default as Navbar } from "./Navbar";
+export { default as SearchBox } from "./SearchBox";
+export { default as SearchFeed } from "./SearchFeed";
+export { default as SideBar } from "./SideBar";
+export { default as VideoDetail } from "./VideoDetail";
+export {default as Videos} from './Videos'
+export {default as VideoCard} from './VideoCard'
+export {default as ChannelCard} from './ChannelCard'
