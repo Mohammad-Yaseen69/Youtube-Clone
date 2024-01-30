@@ -6,14 +6,18 @@ const Videos = ({ Videos, loading , direction}) => {
 
    
     return (
-        <Stack
-            direction={direction ? 'column' : 'row'}
+           <Stack
+            direction={direction? 'column' : 'row'}
             flexWrap='wrap'
             mt={3} gap={2}
             sx={{
                 justifyContent: 'start',
                 '@media (max-width: 810px)': {
                     justifyContent: 'center',
+                },
+                flexDirection : (direction ? 'column' : 'row'), // Yahan dekh, agar 'column' set hai to wahi rahega, warna agar direction empty hai ya 'row' hai to 'row' rahega
+                '@media (max-width: 600px)': { // Yahan 600px set kiya, agar screen width 600px se choti hogi to column ho jayega
+                    flexDirection: 'column',
                 },
             }}
         >
