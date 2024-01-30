@@ -6,6 +6,7 @@ import { fetchData } from '../logic/Fetching'
 import { Box, Stack, Typography } from '@mui/material'
 import { Videos } from './'
 import { CheckCircle } from '@mui/icons-material'
+import Comments from './Comments'
 
 
 const VideoDetail = () => {
@@ -57,10 +58,17 @@ const VideoDetail = () => {
                   </Typography>
                 </Stack>
               </Stack>
+
+              <Stack direction='row' display={{ xs: 'none', md: 'flex' }} mt={12}>
+                <Comments id={id} Count={videoDetail?.statistics.commentCount} />
+              </Stack>
             </Box>
           </Box>
           <Box px={2} py={{ md: 1, xs: 5 }} flex={0} justifyContent="center" alignItems="center" >
             <Videos Videos={videos} direction="column" />
+            <Stack direction='row' display={{ xs: 'flex', md: 'none' }} mt={12}>
+              <Comments id={id} Count={videoDetail?.statistics.commentCount} />
+            </Stack>
           </Box>
         </Stack>
       }
