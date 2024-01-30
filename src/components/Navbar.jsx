@@ -11,7 +11,13 @@ const Navbar = () => {
   return (
     <Stack
       direction="row" alignItems={"center"} p={2}
-      sx={{ position: 'sticky', backgroundColor: '#000', justifyContent: 'space-between', top: '0' }}>
+      sx={{
+        position: 'sticky',
+        backgroundColor: '#000',
+        justifyContent: 'space-between',
+        top: '0',
+        zIndex : 4
+      }}>
       <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
         <img src={logo} alt="logo" style={{ height: "40px" }} />
       </Link>

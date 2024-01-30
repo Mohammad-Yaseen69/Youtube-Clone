@@ -12,7 +12,12 @@ const VideoCard = ({ video: {
   console.log(videoId, snippet);
 
   return (
-    <Card sx={{ maxWidth: { xs: '100%', sm: '358px', md: "290px" }, boxShadow: "none", borderRadius: 2 }}>
+    <Card sx={{
+      maxWidth: { xs: '100%', sm: '358px', md: "290px" },
+      minWidth: { xs: '100%', sm: '358px', md: "100%" },
+      boxShadow: "none",
+      borderRadius: 1
+    }}>
       <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
         <CardMedia image={snippet?.thumbnails?.high?.url || demoThumbnailUrl} alt={snippet?.title}
           sx={{ width: { xs: '100%', sm: '358px' }, minHeight: 180 }}
